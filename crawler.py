@@ -1,4 +1,4 @@
-# --coding:utf-8--
+# -*-coding:utf-8-*-
 
 import requests
 from bs4 import BeautifulSoup as bs
@@ -24,12 +24,17 @@ def get_tabel(url):
 
 
 
-def main():
-    soup = get_soup(DOMEIN)    
-    today = get_today(soup)
+def df_to_csv():
     df = get_tabel(DOMEIN)
-    return df
+    df.to_csv('data/data.csv')
 
 
-for i in main():
-    print(i)
+#----------------------------------------
+
+df = get_tabel(DOMEIN)
+data = pd.read_csv('/Users/t4t3/Dropbox/tools/twomotor/data/data.csv', index_col= 0  )
+
+
+print(df)
+print("#"*100)
+print(data)
