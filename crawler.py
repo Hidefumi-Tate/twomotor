@@ -29,7 +29,7 @@ def df_to_csv():
     df.to_csv('data/data.csv')
 
 
-#----------------------------------------
+#--------debug--------------------------------
 
 df = get_tabel(DOMEIN)
 data = pd.read_csv('/Users/t4t3/Dropbox/tools/twomotor/data/data.csv', index_col= 0  )
