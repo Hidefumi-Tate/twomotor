@@ -19,12 +19,13 @@ def get_today(soup):
 
 def get_tabel(url):
     dflist = pd.read_html(url)
-    return pd.DataFrame(dflist) 
+    return dflist
 
 
 
 def df_to_csv(url):
     df = get_tabel(url)
+    df = pd.DataFrame(df)
     df.to_csv('data/data.csv')
 
 
